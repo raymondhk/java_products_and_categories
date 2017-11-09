@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 public interface ProductRepository extends CrudRepository<Product,Long>{
 	// Query methods go here.
 	List<Product> findAll();
-	
+	List<Product> findByNameNotIn(List<String> name);
 	// Example:
 	// public YourModelHere findByName(String name);
 }

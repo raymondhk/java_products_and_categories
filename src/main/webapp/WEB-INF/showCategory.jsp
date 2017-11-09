@@ -42,20 +42,21 @@
 					
 				</div>
 				<div class="col-md-6">
-					<form:form method="POST" action="/categories/${category.id}" modelAttribute="category">
-						<form:hidden path="id"/>
-							<form:label path="products">Products:
-							<form:select path="products" class="form-control">
+					<form method="POST" action="/categories/${category.id}">
+						<div class="form-group">
+							<label name="products">Products:
+							<select name="products" class="form-control">
 								<option disabled selected>Select Product</option>
 								<c:forEach items="${products}" var="product">
-									<form:option value="${product}" label="${product.name}"/>
+									<option value="${product.id}" label="${product.name}"/>
 								</c:forEach>
-							</form:select>
-							</form:label>
+							</select>
+							</label>
+						</div>
 						<br>
 						<br>
 						<input type="submit" value="Add" class="btn btn-success"/>
-					</form:form>
+					</form>
 				</div>
 			</div>
 		</div>
